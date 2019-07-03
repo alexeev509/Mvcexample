@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 
     @RequestMapping(value = "/enter", method = RequestMethod.GET)
-    public void enter() {
+    public String enter() {
         System.out.println("I am on server!!!!");
+        return "Hello";
     }
     @RequestMapping(value = "/help", method = RequestMethod.GET)
     public void help2(){
