@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/")
 public class UserController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public void help(){
+    @RequestMapping(value = "/enter", method = RequestMethod.GET)
+    public void enter() {
         System.out.println("I am on server!!!!");
     }
     @RequestMapping(value = "/help", method = RequestMethod.GET)
