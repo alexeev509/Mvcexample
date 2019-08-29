@@ -19,7 +19,18 @@ public class Main implements WebApplicationInitializer {
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(webApplicationContext);
         ServletRegistration.Dynamic dynamic = servletContext.addServlet("dispatcher", dispatcherServlet);
-        dynamic.addMapping("/*");
+        dynamic.addMapping("/home");
         dynamic.setLoadOnStartup(1);
+
+
+        AnnotationConfigWebApplicationContext webApplicationContext2 = new AnnotationConfigWebApplicationContext();
+        // webApplicationContext.register(ApplicationConfig.class);
+        webApplicationContext2.scan("controllers");
+//        System.out.println(webApplicationContext.getBeanDefinitionNames());
+
+        DispatcherServlet dispatcherServlet2 = new DispatcherServlet(webApplicationContext2);
+        ServletRegistration.Dynamic dynamic2 = servletContext.addServlet("dispatcher2", dispatcherServlet2);
+        dynamic2.addMapping("/hi");
+        dynamic2.setLoadOnStartup(1);
     }
 }
